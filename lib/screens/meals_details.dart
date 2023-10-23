@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mealsapp/models/meal.dart';
 
 class MealDetailsScreen extends StatelessWidget {
-  const MealDetailsScreen(
-      {super.key, required this.meal, required this.onToggleFavorite});
+  const MealDetailsScreen({
+    super.key,
+    required this.meal,
+    required this.onToggleFavorite,
+  });
 
   final Meal meal;
   final void Function(Meal meal) onToggleFavorite;
@@ -30,6 +33,16 @@ class MealDetailsScreen extends StatelessWidget {
               height: 300,
               width: double.infinity,
               fit: BoxFit.cover,
+            ),
+            const SizedBox(
+              height: 14,
+            ),
+            Text(
+              'Ingredients',
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             const SizedBox(
               height: 14,
